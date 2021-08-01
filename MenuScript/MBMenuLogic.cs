@@ -1,22 +1,12 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
-
-public struct MenuData
-{
-    public const string MENU_SCRIPT = "MenuScript";
-}
 
 public class MBMenuLogic : MonoBehaviour
 {
-    /*
     public void Awake()
     {
-        SceneManager.LoadScene("GameScene");
-
-        //1)Получаем System.
-        GameSystem = GameObject.Find(SystemData.SYSTEM_CODE).GetComponent<MBGameSystem>();
+        //SceneManager.LoadScene("GameScene");
+        GameDir = GameObject.Find(GameData.GAME_LOGIC).GetComponent<MBGameDir>();
     }
 
-    public MBGameSystem GameSystem { private set; get; }
-    */
+    public MBGameDir GameDir { private set; get; }
 }
