@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MBController : MonoBehaviour, IController
+public class MBGameObjectController : MonoBehaviour, IGameObjectController
 {
     public void Start()
     {

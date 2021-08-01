@@ -3,7 +3,7 @@
 /// <summary>
 /// В данном классе все скрипты отвечающие за констроль обьекта(Направление, Позиция, Анимация.) и ссылка на него.
 /// </summary>
-public interface IController
+public interface IGameObjectController
 {
     /// <summary>
     /// Хранится ссылка на обьект.
