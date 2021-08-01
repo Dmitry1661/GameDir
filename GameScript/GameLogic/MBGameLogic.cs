@@ -4,10 +4,10 @@ public class MBGameLogic : MonoBehaviour
 {
     public void Awake()
     {
-        GameDir = GameObject.Find(Data.GAME_DIR).GetComponent<MBGameDir>();
+        GameDir = GameObject.Find(GameData.GAME_DIR).GetComponent<MBGameDir>();
 
-        UnitManager = GameObject.Find(Data.GAME_LOGIC).GetComponent<MBUnitManager>();
-        WorldManager = GameObject.Find(Data.GAME_LOGIC).GetComponent<MBWorldManager>();
+        UnitManager = GameObject.Find(GameData.GAME_LOGIC).GetComponent<MBUnitManager>();
+        WorldManager = GameObject.Find(GameData.GAME_LOGIC).GetComponent<MBWorldManager>();
     }
 
     public MBGameDir GameDir { private set; get; }

@@ -8,6 +8,12 @@ public class StringRemove
         StringResult = StrRemove(pString, pLength);
     }
 
+    /// <summary>
+    /// Обрезает строку с двух сторон.
+    /// </summary>
+    /// <param name="str"></param>
+    /// <param name="i"></param>
+    /// <returns></returns>
     public string StrRemove(string str, int i)
     {
         string buffer = "";

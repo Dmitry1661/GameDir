@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Это стартовый скрипт. В его обьязаности входит:
-/// 1)Создать Character.
+/// 1)Создать Игровой уровень.
 /// 2)...
 /// 3)...
 /// </summary>
@@ -10,7 +10,7 @@ public class MBStart : MonoBehaviour
 {
     public void Start()
     {
-        GameLogic = GameObject.Find(Data.GAME_LOGIC).GetComponent<MBGameLogic>();
+        GameLogic = GameObject.Find(GameData.GAME_LOGIC).GetComponent<MBGameLogic>();
 
         CreatingWorld();
     }

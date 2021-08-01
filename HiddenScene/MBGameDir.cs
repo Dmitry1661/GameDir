@@ -3,7 +3,7 @@ using UnityEngine;
 
 /// <summary>
 /// Информационое ядро игры.
-/// Данный скипт висит на DontDestroy сцене и доступен отовсюду.
+/// Данный скипт висит на DontDestroy сцене и его поля доступны отовлюду.
 /// </summary>
 public class MBGameDir : MonoBehaviour
 {

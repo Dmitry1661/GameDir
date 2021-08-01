@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// Сдесь будут хранится полезные константы.
 /// </summary>
-public struct Data
+public struct GameData
 {
     /// <summary>
     /// Имя обьекта, на котором висит скрипт GameDir.

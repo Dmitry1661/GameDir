@@ -7,6 +7,8 @@
 /// </summary>
 public class MBUpdateHorizontalMovement : MonoBehaviour
 {
+    //Переделать.
+
     /*
     /// <summary>
     /// Запускает вертикальное движение обьекта.

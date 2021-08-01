@@ -3,7 +3,7 @@
 /// <summary>
 /// Данный класс принимает текущую позицию, timeStep, и скорость с которой движется обьект.
 /// </summary>
-public class NextPositionX
+public class NextPositionX : INextPosition
 {
     /// <summary>
     /// 

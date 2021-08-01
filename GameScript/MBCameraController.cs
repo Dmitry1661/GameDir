@@ -2,6 +2,7 @@
 
 public class MBCameraController : MonoBehaviour
 {
+    // Переделать.
     /*
     private void Start()
     {
