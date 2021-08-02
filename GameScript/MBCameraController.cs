@@ -19,7 +19,7 @@ public class MBCameraController : MonoBehaviour
 
         Vector3 vecY = Vector3.Lerp(transform.position, vecRight, Dumping * Time.deltaTime * 100);
 
-        if (GameLogic.UnitManager.Character.Direction.WatchDirection.HasFlag(WatchDirectionEnum.Rigth))
+        if (GameLogic.UnitManager.Character.Direction.WatchDirection.HasFlag(WatchDirectionEnum.Right))
         {
             Vector3 vec = Vector3.Lerp(transform.position, vecLeft, Dumping * Time.deltaTime);
             transform.position = new Vector3(vec.x, vecY.y, -10);

@@ -28,5 +28,10 @@ public interface IGameObjectController
     /// <summary>
     /// Отвечает за анимацию.
     /// </summary>
-    MBAnimation Animation { get; }
+    MBAnimator Animator { get; }
+
+    /// <summary>
+    /// Отвечает за разворот.
+    /// </summary>
+    MBRotation Rotation { get; }
 }

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Информационое ядро игры.
@@ -9,26 +8,12 @@ public class MBGameDir : MonoBehaviour
 {
     public void Start()
     {
-        CreateMissionManager();
-        CreatePlayerManager();
-        CreateSaveManager();
-    }
+        MissionManager = new MissionManager(MBLoadMission.GetAll(MissionData.MISSION_PATH, MissionData.MISSION_FILE_NAME));
 
-    private void CreateMissionManager()
-    {
-        MissionManager = new MissionManager(MBLoadMission.Get(MissionData.MISSION_PATH, MissionData.MISSION_FILE_NAME));
+        //PlayerManager = new PlayerManager(MBLoadPlayer.Get(PlayerData.PLAYER_SAVE));
+        PlayerManager = new PlayerManager();
     }
-
-    private void CreatePlayerManager()
-    {
-    }
-
-    private void CreateSaveManager()
-    {
-    }
-
 
     public PlayerManager PlayerManager { private set; get; }
     public MissionManager MissionManager { private set; get; }
-    public SaveManager SaveManager { private set; get; }
 }

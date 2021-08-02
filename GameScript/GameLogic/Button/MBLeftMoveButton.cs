@@ -5,10 +5,25 @@ public class MBLeftMoveButton : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 {
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (GameLogic.GameDir.PlayerManager.CacheAction.ActionType.HasFlag(ActionType.None))
+        {
+            GameLogic.GameDir.PlayerManager.SetAction(ActionType.Run);
+
+            GameLogic.UnitManager.Character.Animator.SetAnim(AnimationData.RUN, true);
+
+            GameLogic.UnitManager.Character.Rotation.
+                Rotation(GameLogic.UnitManager.Character.Direction.WatchDirection.HasFlag(WatchDirectionEnum.Left));
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        if (GameLogic.GameDir.PlayerManager.CacheAction.ActionType.HasFlag(ActionType.Run))
+        {
+            GameLogic.GameDir.PlayerManager.SetAction(ActionType.None);
+
+            GameLogic.UnitManager.Character.Animator.SetAnim(AnimationData.RUN, false);
+        }
     }
 
     public void Start()

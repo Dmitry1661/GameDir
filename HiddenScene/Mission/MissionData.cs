@@ -14,4 +14,9 @@
     /// Пусть к папке где хранятся JSON файлы.
     /// </summary>
     public const string MISSION_PATH = "MissionFiles/Mission_";
+
+    /// <summary>
+    /// Изпульзуется для загрузки текущей миссии.
+    /// </summary>
+    public const string CURRENT_MISSION = "CurrentMission";
 }
