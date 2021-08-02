@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
 
-public class MBEnemyController : MBGameObjectController
+public class MBEnemyController : MBUnitController
 {
 }

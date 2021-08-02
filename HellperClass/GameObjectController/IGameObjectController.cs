@@ -6,6 +6,11 @@
 public interface IGameObjectController
 {
     /// <summary>
+    /// Инициализация происходит через Awake.
+    /// </summary>
+    void Awake();
+
+    /// <summary>
     /// Хранится ссылка на обьект.
     /// </summary>
     GameObject CharacterObject { get; }

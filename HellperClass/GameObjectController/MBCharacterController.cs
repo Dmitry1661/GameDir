@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
 
-public class MBCharacterController : MBGameObjectController
+public class MBCharacterController : MBUnitController
 {
 }

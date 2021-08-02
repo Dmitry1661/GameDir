@@ -2,56 +2,38 @@
 
 public class MBCameraController : MonoBehaviour
 {
-    // Переделать.
-    /*
-    private void Start()
+    public void Start()
     {
-        CharacterPosition = GameObject.FindGameObjectWithTag("Character").GetComponent<MBRigidBody>();
-        CharacterDirection = GameObject.FindGameObjectWithTag("Character").GetComponent<MBCharacterDirection>();
-
-        if (CharacterDirection.DirectionRight)
-        {
-            transform.position = new Vector3(CharacterPosition.Position.x + OffsetCurrent.x,
-                                             CharacterPosition.Position.y - OffsetCurrent.y,
-                                             -10);
-        }
+        GameLogic = GameObject.Find(GameData.GAME_LOGIC).GetComponent<MBGameLogic>();
     }
 
-    void Update()
+    public void Update()
     {
-        SetPositionCameraMove();
-    }
-
-    public void SetPositionCameraMove()
-    {
-        Vector3 vecLeft = new Vector3(CharacterPosition.Position.x + OffsetCurrent.x,
-                                      CharacterPosition.Position.y - OffsetCurrent.y,
+        Vector3 vecLeft = new Vector3(GameLogic.UnitManager.Character.Position.Transform.position.x + OffsetCurrent.x,
+                                      GameLogic.UnitManager.Character.Position.Transform.position.y - OffsetCurrent.y,
                                       -10);
 
-        Vector3 vecRight = new Vector3(CharacterPosition.Position.x - OffsetCurrent.x,
-                                      CharacterPosition.Position.y - OffsetCurrent.y,
+        Vector3 vecRight = new Vector3(GameLogic.UnitManager.Character.Position.Transform.position.x - OffsetCurrent.x,
+                                      GameLogic.UnitManager.Character.Position.Transform.position.y - OffsetCurrent.y,
                                       -10);
 
         Vector3 vecY = Vector3.Lerp(transform.position, vecRight, Dumping * Time.deltaTime * 100);
 
-        if (!CharacterDirection.DirectionRight)
-        {
-            Vector3 vec = Vector3.Lerp(transform.position, vecRight, Dumping * Time.deltaTime);
-            transform.position = new Vector3(vec.x, vecY.y, -10);
-        }
-        else
+        if (GameLogic.UnitManager.Character.Direction.WatchDirection.HasFlag(WatchDirectionEnum.Rigth))
         {
             Vector3 vec = Vector3.Lerp(transform.position, vecLeft, Dumping * Time.deltaTime);
             transform.position = new Vector3(vec.x, vecY.y, -10);
         }
+        else
+        {
+            Vector3 vec = Vector3.Lerp(transform.position, vecRight, Dumping * Time.deltaTime);
+            transform.position = new Vector3(vec.x, vecY.y, -10);
+        }
     }
 
-    private MBRigidBody CharacterPosition;
-    private MBCharacterDirection CharacterDirection;
-
     // Сглаживание камеры.
-    private float Dumping = 5f;
+    public float Dumping;
     // Смещение камеры относильно персонажа.
-    private Vector2 OffsetCurrent = new Vector2(4f, -0.3f);
-    */
+    public Vector2 OffsetCurrent;
+    public MBGameLogic GameLogic { private set; get; }
 }

@@ -7,6 +7,6 @@ public class MBDontDestroyScript : MonoBehaviour
     {
         DontDestroyOnLoad(this);
 
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene("GameScene");
     }
 }

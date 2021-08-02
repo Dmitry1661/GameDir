@@ -17,9 +17,14 @@ public class MBStart : MonoBehaviour
 
     private void CreatingWorld()
     {
-        GameObject obj = Instantiate(Resources.Load(GameLogic.GameDir.MissionManager.CurrentMission.CellName)) as GameObject;
+        //GameObject obj = Instantiate(Resources.Load(GameLogic.GameDir.MissionManager.CurrentMission.CellName)) as GameObject;
+        /*
+        GameObject obj = Instantiate(Resources.Load("MissionFiles/Mission_1/CellDefault2")) as GameObject;
 
         GameLogic.WorldManager.Add(obj);
+        */
+
+        GameObject obj = Instantiate(Resources.Load("Character")) as GameObject;
     }
 
     public MBGameLogic GameLogic { private set; get; }

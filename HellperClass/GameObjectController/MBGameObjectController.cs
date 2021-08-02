@@ -2,7 +2,7 @@
 
 public class MBGameObjectController : MonoBehaviour, IGameObjectController
 {
-    public void Start()
+    public void Awake()
     {
         CharacterObject = gameObject;
 
@@ -12,6 +12,7 @@ public class MBGameObjectController : MonoBehaviour, IGameObjectController
     }
 
     public GameObject CharacterObject { private set; get; }
+
     public MBDirection Direction { private set; get; }
     public MBTransform Position { private set; get; }
     public MBAnimation Animation { private set; get; }

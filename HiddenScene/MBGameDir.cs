@@ -9,20 +9,26 @@ public class MBGameDir : MonoBehaviour
 {
     public void Start()
     {
-        ConstructorMissionManager();
+        CreateMissionManager();
+        CreatePlayerManager();
+        CreateSaveManager();
     }
 
-    private void ConstructorMissionManager()
+    private void CreateMissionManager()
     {
-        List<Mission> missionList = new List<Mission>();
-
-        for (int i = 0; i < MissionData.MISSION_COUNT; ++i)
-        {
-            missionList.Add(MBLoadMission.Get($"{MissionData.MISSION_PATH + (i + 1)}/{MissionData.MISSION_FILE_NAME}"));
-        }
-
-        MissionManager = new MissionManager(missionList);
+        MissionManager = new MissionManager(MBLoadMission.Get(MissionData.MISSION_PATH, MissionData.MISSION_FILE_NAME));
     }
 
+    private void CreatePlayerManager()
+    {
+    }
+
+    private void CreateSaveManager()
+    {
+    }
+
+
+    public PlayerManager PlayerManager { private set; get; }
     public MissionManager MissionManager { private set; get; }
+    public SaveManager SaveManager { private set; get; }
 }

@@ -2,6 +2,11 @@
 
 public class MBTransform : MonoBehaviour
 {
+    public void NextPosition(Vector3 pNextPosition)
+    {
+        Transform.position = pNextPosition;
+    }
+
     private void Start()
     {
         Rigidbody = gameObject.GetComponent<Rigidbody2D>();
