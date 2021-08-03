@@ -16,10 +16,8 @@ public class MBRotation : MonoBehaviour
 
     private void Rotation()
     {
-        Transform transform = gameObject.transform;
-
-        transform.localScale = new Vector3(transform.localScale.x * -1.0f,
-                                           transform.localScale.y,
-                                           transform.localScale.z);
+        gameObject.transform.localScale = new Vector3(transform.localScale.x * -1.0f,
+                                                      transform.localScale.y,
+                                                      transform.localScale.z);
     }
 }
