@@ -6,10 +6,10 @@ public class MBGameObjectController : MonoBehaviour, IGameObjectController
     {
         GameObj = gameObject;
 
-        Direction = GameObject.FindGameObjectWithTag(gameObject.tag).GetComponent<MBDirection>();
-        Position = GameObject.FindGameObjectWithTag(gameObject.tag).GetComponent<MBTransform>();
-        Animator = GameObject.FindGameObjectWithTag(gameObject.tag).GetComponent<MBAnimator>();
-        Rotation = GameObject.FindGameObjectWithTag(gameObject.tag).GetComponent<MBRotation>();
+        Direction = gameObject.GetComponent<MBDirection>();
+        Position = gameObject.GetComponent<MBTransform>();
+        Animator = gameObject.GetComponent<MBAnimator>();
+        Rotation = gameObject.GetComponent<MBRotation>();
     }
 
     public GameObject GameObj { private set; get; }
