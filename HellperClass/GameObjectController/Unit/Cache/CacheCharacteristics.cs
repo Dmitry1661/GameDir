@@ -1,6 +1,6 @@
-﻿public struct CacheCharacteristic
+﻿public struct CacheUnitCharacteristic
 {
-    public CacheCharacteristic(float pAttackPower, float pAttackSpeed, float pMoveSpeed)
+    public CacheUnitCharacteristic(float pAttackPower, float pAttackSpeed, float pMoveSpeed)
     {
         CurrentMoveSpeed = MoveSpeed = pMoveSpeed;
         CurrentAttackSpeed = AttackSpeed = pAttackSpeed;

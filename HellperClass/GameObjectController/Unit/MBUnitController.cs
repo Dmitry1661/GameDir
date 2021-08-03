@@ -11,6 +11,6 @@ public class MBUnitController : MBGameObjectController
 
     public MBGameLogic GameLogic { private set; get; }
 
-    public CacheAction CacheAction { set; get; }
-    public CacheCharacteristic CacheCharacteristic { set; get; }
+    public CacheUnitAction CacheAction { set; get; }
+    public CacheUnitCharacteristic CacheCharacteristic { set; get; }
 }

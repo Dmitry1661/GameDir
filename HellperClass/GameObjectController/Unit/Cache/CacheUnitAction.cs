@@ -1,6 +1,6 @@
-﻿public struct CacheAction
+﻿public struct CacheUnitAction
 {
-    public CacheAction(ActionType pActionType)
+    public CacheUnitAction(ActionType pActionType)
     {
         ActionType = pActionType;
     }

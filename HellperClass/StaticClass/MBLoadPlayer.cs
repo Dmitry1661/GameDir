@@ -2,8 +2,8 @@
 
 public class MBLoadPlayer : MonoBehaviour
 {
-    public static CacheCharacteristic Get(string pKey)
+    public static CacheUnitCharacteristic Get(string pKey)
     {
-        return JsonUtility.FromJson<CacheCharacteristic>(MBPlayerPrefs.Load(pKey));
+        return JsonUtility.FromJson<CacheUnitCharacteristic>(MBPlayerPrefs.Load(pKey));
     }
 }
