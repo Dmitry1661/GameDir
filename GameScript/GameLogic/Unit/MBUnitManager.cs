@@ -25,7 +25,7 @@ public class MBUnitManager : MonoBehaviour
 
             case UnitData.NEUTRAL_HEROES_TAG_NAME:
 
-                NeutralHeroes.Add(obj.GetComponent<MBNeutralHeroesController>());
+                NeutralHeroesList.Add(obj.GetComponent<MBNeutralHeroesController>());
 
                 break;
         }
@@ -33,5 +33,5 @@ public class MBUnitManager : MonoBehaviour
 
     public List<MBEnemyController> EnemyList { private set; get; }
     public MBCharacterController Character { private set; get; }
-    public List<MBNeutralHeroesController> NeutralHeroes { private set; get; }
+    public List<MBNeutralHeroesController> NeutralHeroesList { private set; get; }
 }

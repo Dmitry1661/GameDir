@@ -6,13 +6,11 @@ public class MBUnitController : MBGameObjectController
     {
         GameLogic = GameObject.Find(GameData.GAME_LOGIC).GetComponent<MBGameLogic>();
 
-        AddUnit();
-    }
-
-    public void AddUnit()
-    {
         GameLogic.UnitManager.Add(gameObject);
     }
 
     public MBGameLogic GameLogic { private set; get; }
+
+    public CacheAction CacheAction { set; get; }
+    public CacheCharacteristic CacheCharacteristic { set; get; }
 }
