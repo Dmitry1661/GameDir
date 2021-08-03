@@ -18,7 +18,4 @@ public class MBGameObjectController : MonoBehaviour, IGameObjectController
     public MBTransform Position { private set; get; }
     public MBAnimator Animator { private set; get; }
     public MBRotation Rotation { private set; get; }
-
-    public CacheAction CacheAction { private set; get; }
-    public CacheCharacteristic CacheCharacteristic { set; get; }
 }
