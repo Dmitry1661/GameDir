@@ -13,7 +13,7 @@ public interface IGameObjectController
     /// <summary>
     /// Хранится ссылка на обьект.
     /// </summary>
-    GameObject CharacterObject { get; }
+    GameObject GameObj { get; }
 
     /// <summary>
     /// Устанавливает направление.
