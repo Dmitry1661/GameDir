@@ -7,6 +7,12 @@ public class MBUnitController : MBGameObjectController
         GameLogic = GameObject.Find(GameData.GAME_LOGIC).GetComponent<MBGameLogic>();
 
         GameLogic.UnitManager.Add(gameObject);
+
+
+        //Переделать
+        CacheCharacteristic = new CacheUnitCharacteristic(CacheUnitData.DEFAULT_ATTACK_POWER, 
+                                                       CacheUnitData.DEFAULT_ATTACK_SPEED,
+                                                       CacheUnitData.DEFAULT_MOVE_SPEED);
     }
 
     public MBGameLogic GameLogic { private set; get; }
