@@ -2,12 +2,12 @@
 using UnityEngine;
 
 /// <summary>
-/// Класс для загрузки Mission.
+/// Клас для получения обьектов из JSON.
 /// </summary>
 public class MBFromJson<T> : MonoBehaviour
 {
     /// <summary>
-    /// Создать список Mission из JSON.
+    /// Создает список <T> из JSON файлов. 
     /// </summary>
     /// <param name="pPathToDirectory">Пусть до директории.</param>
     /// <param name="pNameFile">Имя файла.</param>
@@ -23,6 +23,11 @@ public class MBFromJson<T> : MonoBehaviour
         return missionList;
     }
 
+    /// <summary>
+    /// Создает обьект из JSON файла.
+    /// </summary>
+    /// <param name="pPath">Пусть до файла.</param>
+    /// <returns></returns>
     public static T Get(string pPath)
     {
         return JsonUtility.FromJson<T>(MBTextFileOpen.Read(pPath));
