@@ -4,27 +4,27 @@ using UnityEngine;
 /// <summary>
 /// Класс для загрузки Mission.
 /// </summary>
-public class MBLoadMission : MonoBehaviour
+public class MBFromJson<T> : MonoBehaviour
 {
     /// <summary>
     /// Создать список Mission из JSON.
     /// </summary>
     /// <param name="pPathToDirectory">Пусть до директории.</param>
     /// <param name="pNameFile">Имя файла.</param>
-    public static List<Mission> GetAll(string pPathToDirectory, string pNameFile)
+    public static List<T> GetAll(string pPathToDirectory, string pNameFile)
     {
-        List<Mission> missionList = new List<Mission>();
+        List<T> missionList = new List<T>();
 
         for (int i = 0; i < MissionData.MISSION_COUNT; ++i)
         {
-            missionList.Add(MBLoadMission.Get($"{pPathToDirectory + (i + 1)}/{pNameFile}"));
+            missionList.Add(MBFromJson<T>.Get($"{pPathToDirectory + (i + 1)}/{pNameFile}"));
         }
 
         return missionList;
     }
 
-    private static Mission Get(string pPath)
+    public static T Get(string pPath)
     {
-        return JsonUtility.FromJson<Mission>(MBTextFileOpen.Read(pPath));
+        return JsonUtility.FromJson<T>(MBTextFileOpen.Read(pPath));
     }
 }

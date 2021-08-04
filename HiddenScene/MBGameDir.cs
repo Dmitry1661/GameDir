@@ -1,15 +1,29 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
-/// <summary>
-/// Информационое ядро игры.
-/// Данный скипт висит на DontDestroy сцене и его поля доступны отовлюду.
-/// </summary>
+/************************************************************************************************************/
+/*******************************************...Game[)irecector...********************************************/
+/************************************************************************************************************/
+
 public class MBGameDir : MonoBehaviour
 {
+    private void Initialize()
+    {
+        MissionManager = new MissionManager(MBFromJson<Mission>.GetAll(MissionData.MISSION_PATH, MissionData.MISSION_FILE_NAME));
+    }
+
+    private void StartingGame()
+    {
+        DontDestroyOnLoad(this);
+        SceneManager.LoadScene("GameScene");
+    }
+
     public void Start()
     {
-        MissionManager = new MissionManager(MBLoadMission.GetAll(MissionData.MISSION_PATH, MissionData.MISSION_FILE_NAME));
+        Initialize();
+        StartingGame();
     }
 
     public MissionManager MissionManager { private set; get; }
+    public GameSetting Setting { private set; get; }
 }
