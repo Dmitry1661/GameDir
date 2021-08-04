@@ -4,7 +4,7 @@ using UnityEngine;
 public class MBUnitManager : MonoBehaviour
 {
     /// <summary>
-    /// Метод принимает GameObject, читает его тег.В зависимости от результата записывает либо в EnemyList, либо в Character.
+    /// Метод принимает GameObject, читает его тег.В зависимости от результата сохраняет его.
     /// </summary>
     /// <param name="obj">GameObject(Character or Enemy)</param>
     public void Add(GameObject obj)
