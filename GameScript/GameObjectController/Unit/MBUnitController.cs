@@ -3,7 +3,7 @@
 /************************************************************************************************************/
 /*********************************************** UNIT_CONTROLLER ********************************************/
 /************************************************************************************************************/
-/*********Наследуемые классы требуют пристального наблюдения и КЕШ для хранения переменых значений.**********/
+/**********Родительские классы требуют пристального наблюдения и КЕШ для хранения переменых значений.********/
 /************************************************************************************************************/
 public class MBUnitController : MBGameObjectController
 {
@@ -11,13 +11,7 @@ public class MBUnitController : MBGameObjectController
     {
         GameLogic = GameObject.Find(GameData.GAME_LOGIC).GetComponent<MBGameLogic>();
 
-        if (GameLogic.UnitManager == null)
-        {
-            print("NULL");
-        }
-
         GameLogic.UnitManager.Add(gameObject);
-
 
         //Переделать
         CacheCharacteristic = new CacheUnitCharacteristic(CacheUnitData.DEFAULT_ATTACK_POWER, 

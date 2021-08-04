@@ -11,13 +11,13 @@ public class MBFromJson<T> : MonoBehaviour
     /// </summary>
     /// <param name="pPathToDirectory">Пусть до директории.</param>
     /// <param name="pNameFile">Имя файла.</param>
-    public static List<T> GetAll(string pPathToDirectory, string pNameFile)
+    public static List<T> GetMissionList(string pPathToDirectory, string pNameFile)
     {
         List<T> missionList = new List<T>();
 
         for (int i = 0; i < MissionData.MISSION_COUNT; ++i)
         {
-            missionList.Add(MBFromJson<T>.Get($"{pPathToDirectory + (i + 1)}/{pNameFile}"));
+            missionList.Add(Get($"{pPathToDirectory + (i + 1)}/{pNameFile}"));
         }
 
         return missionList;

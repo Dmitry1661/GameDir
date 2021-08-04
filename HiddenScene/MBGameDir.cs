@@ -9,7 +9,7 @@ public class MBGameDir : MonoBehaviour
 {
     private void Initialize()
     {
-        MissionManager = new MissionManager(MBFromJson<Mission>.GetAll(MissionData.MISSION_PATH, MissionData.MISSION_FILE_NAME));
+        MissionManager = new MissionManager(MBFromJson<Mission>.GetMissionList(MissionData.MISSION_PATH, MissionData.MISSION_FILE_NAME));
     }
 
     private void StartingGame()

@@ -22,14 +22,7 @@ public class MBLeftMoveButton : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     {
         GameLogic = GameObject.Find(GameData.GAME_LOGIC).GetComponent<MBGameLogic>();
 
-        try
-        {
-            HorizontalMovement = GameLogic.UnitManager.Character.GameObj.GetComponent<MBHorizontalMovement>();
-        }
-        catch (MissingComponentException ex)
-        { 
-            MBLogMCE.Log(gameObject.name, ButtonData.LeftMoveButton, ex);
-        }
+        HorizontalMovement = GameLogic.UnitManager.Character.GameObj.GetComponent<MBHorizontalMovement>();
     }
 
     public MBGameLogic GameLogic { private set; get; }
