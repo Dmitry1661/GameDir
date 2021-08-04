@@ -11,6 +11,11 @@ public class MBUnitController : MBGameObjectController
     {
         GameLogic = GameObject.Find(GameData.GAME_LOGIC).GetComponent<MBGameLogic>();
 
+        if (GameLogic.UnitManager == null)
+        {
+            print("NULL");
+        }
+
         GameLogic.UnitManager.Add(gameObject);
 
 

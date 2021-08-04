@@ -13,42 +13,10 @@ public class MBGameObjectController : MonoBehaviour, IGameObjectController
     {
         GameObj = gameObject;
 
-        try
-        {
-            Direction = gameObject.GetComponent<MBDirection>();
-        }
-        catch(MissingComponentException ex)
-        {
-            MBLogMCE.Log(gameObject.name, ObjectControllerData.Direction, ex);
-        }
-
-        try
-        {
-            Position = gameObject.GetComponent<MBTransform>();
-        }
-        catch(MissingComponentException ex)
-        {
-            MBLogMCE.Log(gameObject.name, ObjectControllerData.Position, ex);
-        }
-
-        try
-        {
-            Animator = gameObject.GetComponent<MBAnimator>();
-        }
-        catch(MissingComponentException ex)
-        {
-            MBLogMCE.Log(gameObject.name, ObjectControllerData.Animator, ex);
-        }
-
-        try
-        {
-            Rotation = gameObject.GetComponent<MBRotation>();
-        }
-        catch(MissingComponentException ex)
-        {
-            MBLogMCE.Log(gameObject.name, ObjectControllerData.Rotation, ex);
-        }
-
+        Direction = gameObject.GetComponent<MBDirection>();
+        Position = gameObject.GetComponent<MBTransform>();
+        Animator = gameObject.GetComponent<MBAnimator>();
+        Rotation = gameObject.GetComponent<MBRotation>();
     }
 
     public GameObject GameObj { private set; get; }

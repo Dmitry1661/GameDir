@@ -1,4 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+
+
+/************************************************************************************************************/
+/*********************************************...][GAME.LOGIC][...*******************************************/
+/************************************************************************************************************/
+/* -Данный скрипт крепится к обьекту GameLogic, так же на этом обьекте должны быть закреплены все скрипты ***/
+/*  которые будут проинициализированы сдесь.*****************************************************************/
+/************************************************************************************************************/
+
 
 public class MBGameLogic : MonoBehaviour
 {
@@ -17,13 +27,7 @@ public class MBGameLogic : MonoBehaviour
     /// </summary>
     private void Run()
     {
-        //GameObject obj = Instantiate(Resources.Load(GameLogic.GameDir.MissionManager.CurrentMission.CellName)) as GameObject;
-        /*
-        GameObject obj = Instantiate(Resources.Load("MissionFiles/Mission_1/CellDefault2")) as GameObject;
-
-        GameLogic.WorldManager.Add(obj);
-        */
-
+        print(1);
         GameObject obj = Instantiate(Resources.Load("Character")) as GameObject;
     }
 

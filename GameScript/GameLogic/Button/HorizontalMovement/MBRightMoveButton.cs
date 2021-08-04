@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-/// <summary>
-/// Привязываем кнопку к UnitCharacter.
-/// </summary>
+/************************************************************************************************************/
+/*********************************************>>>_LEFT_MOVE_BUTTON_>>>***************************************/
+/************************************************************************************************************/
+/***************Скрипт обрабатывает UI.Button отвечающую за перемещение UnitCharacter вправо.****************/
+/************************************************************************************************************/
 public class MBRightMoveButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IHorizontalMovement
 {
     public void OnPointerDown(PointerEventData eventData)
