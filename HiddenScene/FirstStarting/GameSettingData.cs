@@ -11,5 +11,5 @@ public class GameSettingData : MonoBehaviour
     /// <summary>
     /// Пусть где находится файл со стандартными игровыми настройками.
     /// </summary>
-    public const string GAME_SETTING_PATH = "";
+    public const string GAME_SETTING_PATH = "Character/CharacterSettingJSON";
 }

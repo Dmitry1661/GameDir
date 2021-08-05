@@ -7,7 +7,9 @@ public class MoveSpeedInvolution
 {
     public MoveSpeedInvolution(CacheUnitCharacteristic pCache)
     {
-        Result = new CacheUnitCharacteristic(pCache.AttackPower, pCache.AttackSpeed, pCache.MoveSpeed * -1);
+        pCache.CurrentMoveSpeed = pCache.CurrentMoveSpeed * -1;
+
+        Result = new CacheUnitCharacteristic(pCache);
     }
 
     public CacheUnitCharacteristic Result { private set; get; }

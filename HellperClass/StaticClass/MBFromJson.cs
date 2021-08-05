@@ -6,6 +6,7 @@ using UnityEngine;
 /// </summary>
 public class MBFromJson<T> : MonoBehaviour
 {
+    //ПЕРЕДЕЛАТЬ.
     /// <summary>
     /// Создает список <T> из JSON файлов. 
     /// </summary>

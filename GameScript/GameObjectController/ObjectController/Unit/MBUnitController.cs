@@ -7,16 +7,21 @@
 /************************************************************************************************************/
 public class MBUnitController : MBGameObjectController
 {
+    public TextAsset SettingFileJson;
+
     public void Start()
     {
         GameLogic = GameObject.Find(GameData.GAME_LOGIC).GetComponent<MBGameLogic>();
 
+        // Добавим обьект в UnitManager.
         GameLogic.UnitManager.Add(gameObject);
 
-        //Переделать
-        CacheCharacteristic = new CacheUnitCharacteristic(CacheUnitData.DEFAULT_ATTACK_POWER, 
-                                                       CacheUnitData.DEFAULT_ATTACK_SPEED,
-                                                       CacheUnitData.DEFAULT_MOVE_SPEED);
+        // Настроим базовые характеристики Unit'a.
+        if (SettingFileJson != null)
+            CacheCharacteristic = new CacheUnitCharacteristic(JsonUtility.FromJson<UnitSetting>(SettingFileJson.text));
+        else
+            Debug.Log($"Подключите файл SettingFileJSON к обьекту {gameObject.name}");
+
     }
 
     public MBGameLogic GameLogic { private set; get; }

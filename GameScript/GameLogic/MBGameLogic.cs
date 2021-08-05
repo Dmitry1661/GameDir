@@ -26,7 +26,7 @@ public class MBGameLogic : MonoBehaviour
     /// </summary>
     private void Run()
     {
-        GameObject obj = Instantiate(Resources.Load("Character")) as GameObject;
+        Instantiate(Resources.Load("Character"));
     }
 
     public MBGameDir GameDir { private set; get; }

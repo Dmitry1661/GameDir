@@ -1,6 +1,6 @@
-﻿public class CharacterSetting
+﻿public struct CharacterSetting
 {
-    public float AttackPower;
-    public float AttackSpeed;
-    public float MoveSpeed;
+    public float AttackPower { private set; get; }
+    public float AttackSpeed { private set; get; }
+    public float MoveSpeed { private set; get; }
 }

@@ -1,10 +1,22 @@
-﻿public struct CacheUnitCharacteristic
+﻿public struct CacheUnitCharacteristic 
 {
-    public CacheUnitCharacteristic(float pAttackPower, float pAttackSpeed, float pMoveSpeed)
+    public CacheUnitCharacteristic(UnitSetting pUnitSetting)
     {
-        CurrentMoveSpeed = MoveSpeed = pMoveSpeed;
-        CurrentAttackSpeed = AttackSpeed = pAttackSpeed;
-        CurrentAttackPower = AttackPower = pAttackPower;
+        CurrentMoveSpeed = MoveSpeed = pUnitSetting.MoveSpeed;
+        CurrentAttackSpeed = AttackSpeed = pUnitSetting.AttackSpeed;
+        CurrentAttackPower = AttackPower = pUnitSetting.AttackPower;
+    }
+
+    public CacheUnitCharacteristic(CacheUnitCharacteristic pCache)
+    {
+        MoveSpeed = pCache.MoveSpeed;
+        CurrentMoveSpeed = pCache.CurrentMoveSpeed;
+
+        AttackSpeed = pCache.AttackSpeed;
+        CurrentAttackSpeed = pCache.CurrentAttackSpeed;
+
+        AttackPower = pCache.AttackPower;
+        CurrentAttackPower = pCache.CurrentAttackPower;
     }
 
     /// <summary>
@@ -15,7 +27,7 @@
     /// <summary>
     /// Текущая скорость передвижения.(Она может измениться после наложения каких либо эфектов.)
     /// </summary>
-    public float CurrentMoveSpeed { get; }
+    public float CurrentMoveSpeed { set; get; }
 
     /// <summary>
     /// Стандартная cкорость аттаки.
@@ -25,7 +37,7 @@
     /// <summary>
     /// Текущая скорость атаки. (Она может измениться после наложение эфектов.)
     /// </summary>
-    public float CurrentAttackSpeed { get; }
+    public float CurrentAttackSpeed { set; get; }
 
     /// <summary>
     /// Стандартная сила атаки.
@@ -34,5 +46,5 @@
     /// <summary>
     /// Текущая сила атаки.
     /// </summary>
-    public float CurrentAttackPower { get; }
+    public float CurrentAttackPower { set; get; }
 }
