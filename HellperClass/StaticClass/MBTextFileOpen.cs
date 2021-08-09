@@ -14,10 +14,9 @@ public class MBTextFileOpen : MonoBehaviour
     {
         TextAsset bindata = Resources.Load(pPath) as TextAsset;
 
-        return bindata.text;
 
         //Player player1 = new Player();
-        //string json = JsonUtility.ToJson(player1);
+        //string json = JsonUtility.ToJson(new II());
         //print(json);
 
         // Из джейсона.
@@ -26,6 +25,13 @@ public class MBTextFileOpen : MonoBehaviour
         //Save save = new Save();
 
         //string jsonSave = JsonUtility.ToJson(save);
+
+        return bindata.text;
     }
 }
+
+class II
+{
+}
+
 

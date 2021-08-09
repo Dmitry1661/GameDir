@@ -5,19 +5,30 @@
 /************************************************************************************************************/
 public class UnitDataBuffer
 {
-    public UnitDataBuffer(CacheUnitCharacteristic pCacheUnitCharacteristic)
+    public UnitDataBuffer(UnitSetting pUnitSetting)
     {
         CacheAction = new CacheUnitAction(ActionType.None);
-        CacheCharacteristic = new CacheUnitCharacteristic(pCacheUnitCharacteristic);
-        CacheCountdown = new CacheUnitCountdown(pCacheUnitCharacteristic);
+
+        AttackPower = new CacheUnitAttackPower(pUnitSetting);
+        AttackReload = new CacheUnitAttackReload(pUnitSetting);
+        MoveSpeed = new CacheUnitMoveSpeed(pUnitSetting);
+
+        CountJump = new CacheUnitCountJump(pUnitSetting);
     }
 
-    public void Write(IManagementCache pCache, string[] pInformation = null)
+    public void Write(IWriteCache pCache, string[] pInformation = null)
     {
-        pCache.Write(ref CacheAction, ref CacheCountdown, ref CacheCharacteristic, pInformation);
+        pCache.Write(ref CacheAction, ref AttackPower,  ref AttackReload, pInformation);
     }
 
     public CacheUnitAction CacheAction;
-    public CacheUnitCountdown CacheCountdown;
-    public CacheUnitCharacteristic CacheCharacteristic;
+
+    public CacheUnitAttackPower AttackPower;
+    public CacheUnitAttackReload AttackReload;
+    public CacheUnitMoveSpeed MoveSpeed;
+
+    public CacheUnitCountJump CountJump;
 }
+
+
+

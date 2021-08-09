@@ -12,9 +12,6 @@ public class MBUnitCollision : MBCollision
                 GameLogic.UnitManager.Character.UnitDataBuffer
                     .Write(new ActionControll(), new string[] { ActionControllData.LOWER_THE_FLAG, "JUMP" });
 
-                //Сбрасываем счетчик прыжка.
-                GameLogic.UnitManager.Character.UnitDataBuffer.Write(new ResetJump());
-
                 break;
         }
     }

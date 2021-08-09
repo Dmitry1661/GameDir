@@ -18,7 +18,7 @@ public class MBUnitController : MBGameObjectController, IUnitController
 
         // Настроим базовые характеристики Unit'a.
         if (SettingFileJson != null)
-            UnitDataBuffer = new UnitDataBuffer(new CacheUnitCharacteristic(JsonUtility.FromJson<UnitSetting>(SettingFileJson.text)));
+            UnitDataBuffer = new UnitDataBuffer(JsonUtility.FromJson<UnitSetting>(SettingFileJson.text));
         else
             Debug.Log($"Подключите файл SettingFileJSON к обьекту {gameObject.name}.");
 

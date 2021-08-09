@@ -3,7 +3,7 @@
 /// <summary>
 /// Переворачивает скорость.
 /// </summary>
-public class MoveSpeedInvolution : IManagementCache
+public class MoveSpeedInvolution : IWriteCache
 {
     public void Write(ref CacheUnitAction pUnitAction, ref CacheUnitCountdown pUnitCoolDown, 
         ref CacheUnitCharacteristic pCacheUnitCharacteristic, string [] pInformaion)

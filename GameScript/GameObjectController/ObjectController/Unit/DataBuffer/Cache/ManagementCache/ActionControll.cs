@@ -17,13 +17,11 @@
 }
 
 
-public class ActionControll : IManagementCache
+public class ActionControll : IWriteCache
 {
     public void Write(ref CacheUnitAction pUnitAction, ref CacheUnitCountdown pUnitCoolDown, 
         ref CacheUnitCharacteristic pCacheUnitCharacteristic, string[] pInformation)
     {
-        //ActionType actionType = 
-
         ActionType actionType = pUnitAction.ActionType;
 
         switch(pInformation[0])

@@ -8,14 +8,13 @@ public class MBAttackButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         if (GameLogic.UnitManager.Character.UnitDataBuffer.CacheAction.ActionType.HasFlag(ActionType.Run)) return;
 
         GameLogic.UnitManager.Character.UnitDataBuffer
-            .Write(new ActionControll(), new string[]{ ActionControllData.UPPER_THE_FLAG, "ATTACK" });
+            .Write(new ActionControll(), new string[] { ActionControllData.UPPER_THE_FLAG, "ATTACK" });
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (GameLogic.UnitManager.Character.UnitDataBuffer.CacheAction.ActionType.HasFlag(ActionType.Attack))
-           GameLogic.UnitManager.Character.UnitDataBuffer
-                .Write(new ActionControll(), new string[]{ ActionControllData.LOWER_THE_FLAG, "ATTACK" });
+        GameLogic.UnitManager.Character.UnitDataBuffer
+             .Write(new ActionControll(), new string[] { ActionControllData.LOWER_THE_FLAG, "ATTACK" });
     }
 
     public void Start()
