@@ -17,7 +17,6 @@ public class UnitDataBuffer
         pCache.Write(ref CacheAction, ref CacheCountdown, ref CacheCharacteristic, pInformation);
     }
 
-
     public CacheUnitAction CacheAction;
     public CacheUnitCountdown CacheCountdown;
     public CacheUnitCharacteristic CacheCharacteristic;

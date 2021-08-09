@@ -9,11 +9,11 @@ public class MBUnitCollision : MBCollision
             case CollisionData.FLOOR:
 
                 //Если коснулись земли, то прыжок закончился.
-                if(GameLogic.UnitManager.Character.UnitDataBuffer.CacheAction.ActionType.HasFlag(ActionType.Jump))
-                    GameLogic.UnitManager.Character.UnitDataBuffer.CacheAction.ActionType ^= ActionType.Jump;
+                GameLogic.UnitManager.Character.UnitDataBuffer
+                    .Write(new ActionControll(), new string[] { ActionControllData.LOWER_THE_FLAG, "JUMP" });
 
                 //Сбрасываем счетчик прыжка.
-                GameLogic.UnitManager.Character.UnitDataBuffer.CacheCharacteristic.CurrentNumberJump = 0;
+                GameLogic.UnitManager.Character.UnitDataBuffer.Write(new ResetJump());
 
                 break;
         }
