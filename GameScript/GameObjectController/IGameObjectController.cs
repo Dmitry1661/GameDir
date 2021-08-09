@@ -26,7 +26,7 @@ public interface IGameObjectController
     /// <summary>
     /// Отвечает за позицию.
     /// </summary>
-    MBTransform Position { get; }
+    MBTransform Transform { get; }
 
     /// <summary>
     /// Отвечает за анимацию.

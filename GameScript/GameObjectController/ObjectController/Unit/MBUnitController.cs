@@ -3,9 +3,9 @@
 /************************************************************************************************************/
 /*********************************************** UNIT_CONTROLLER ********************************************/
 /************************************************************************************************************/
-/**********Родительские классы требуют пристального наблюдения и КЕШ для хранения переменых значений.********/
+/**************Родительские классы требуют пристального наблюдения и Buffer для хранения Кэшев.**************/
 /************************************************************************************************************/
-public class MBUnitController : MBGameObjectController
+public class MBUnitController : MBGameObjectController, IUnitController
 {
     public TextAsset SettingFileJson;
 
@@ -18,14 +18,16 @@ public class MBUnitController : MBGameObjectController
 
         // Настроим базовые характеристики Unit'a.
         if (SettingFileJson != null)
-            CacheCharacteristic = new CacheUnitCharacteristic(JsonUtility.FromJson<UnitSetting>(SettingFileJson.text));
+            UnitDataBuffer = new UnitDataBuffer(new CacheUnitCharacteristic(JsonUtility.FromJson<UnitSetting>(SettingFileJson.text)));
         else
-            Debug.Log($"Подключите файл SettingFileJSON к обьекту {gameObject.name}");
+            Debug.Log($"Подключите файл SettingFileJSON к обьекту {gameObject.name}.");
 
+        // Проверим подключeн ли скрипт отвечающий за колизию.
+        if(gameObject.GetComponent<MBUnitCollision>() == null)
+            Debug.Log($"Подключите скрипт отвичающий за колизию к обьету {gameObject.name}.");
     }
 
     public MBGameLogic GameLogic { private set; get; }
-
-    public CacheUnitAction CacheAction;
-    public CacheUnitCharacteristic CacheCharacteristic;
+    public UnitDataBuffer UnitDataBuffer { private set; get; }
 }
+

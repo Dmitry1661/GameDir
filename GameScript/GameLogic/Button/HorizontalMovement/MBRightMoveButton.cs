@@ -22,7 +22,8 @@ public class MBRightMoveButton : MonoBehaviour, IPointerDownHandler, IPointerUpH
     {
         GameLogic = GameObject.Find(GameData.GAME_LOGIC).GetComponent<MBGameLogic>();
 
-        HorizontalMovement = GameLogic.UnitManager.Character.GameObj.GetComponent<MBHorizontalMovement>();
+        if((HorizontalMovement = GameLogic.UnitManager.Character.GameObj.GetComponent<MBHorizontalMovement>()) == null)
+            Debug.Log($"Подключите к обьекту {GameLogic.UnitManager.Character.GameObj.name} скрипт {ObjectControllerData.HorizontalMovement}.");
     }
 
     public MBGameLogic GameLogic { private set; get; }

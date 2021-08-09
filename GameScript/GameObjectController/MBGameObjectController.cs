@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 /************************************************************************************************************/
 /***************************************** >~]GameObjectController]~> ***************************************/
 /************************************************************************************************************/
@@ -13,16 +12,23 @@ public class MBGameObjectController : MonoBehaviour, IGameObjectController
     {
         GameObj = gameObject;
 
-        Direction = gameObject.GetComponent<MBDirection>();
-        Position = gameObject.GetComponent<MBTransform>();
-        Animator = gameObject.GetComponent<MBAnimator>();
-        Rotation = gameObject.GetComponent<MBRotation>();
+        if ((Direction = gameObject.GetComponent<MBDirection>()) == null) 
+            Debug.Log($"Подключите к обьекту {gameObject.name} скрипт {ObjectControllerData.Direction}");
+
+        if ((Transform = gameObject.GetComponent<MBTransform>()) == null)
+            Debug.Log($"Подключите к обьекту {gameObject.name} скрипт {ObjectControllerData.Transform}");
+
+        if ((Animator = gameObject.GetComponent<MBAnimator>()) == null)
+            Debug.Log($"Подключите к обьекту {gameObject.name} скрипт {ObjectControllerData.Animator}");
+
+        if ((Rotation = gameObject.GetComponent<MBRotation>()) == null)
+            Debug.Log($"Подключите к обьекту {gameObject.name} скрипт {ObjectControllerData.Rotation}");
     }
 
     public GameObject GameObj { private set; get; }
 
     public MBDirection Direction { private set; get; }
-    public MBTransform Position { private set; get; }
+    public MBTransform Transform { private set; get; }
     public MBAnimator Animator { private set; get; }
     public MBRotation Rotation { private set; get; }
 }

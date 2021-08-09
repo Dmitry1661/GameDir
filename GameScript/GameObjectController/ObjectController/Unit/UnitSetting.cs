@@ -8,4 +8,6 @@ public struct UnitSetting
     public float AttackPower;
     public float AttackSpeed;
     public float MoveSpeed;
+    public float PowerJump;
+    public float CountJump;
 }

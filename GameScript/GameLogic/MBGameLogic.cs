@@ -13,10 +13,14 @@ public class MBGameLogic : MonoBehaviour
 {
     public void Awake()
     {
-        GameDir = GameObject.Find(GameData.GAME_DIR).GetComponent<MBGameDir>();
+        if ((GameDir = GameObject.Find(GameData.GAME_DIR).GetComponent<MBGameDir>()) == null)
+            Debug.Log($"Подключите к обьекту {GameData.GAME_DIR} скрипт {GameData.GAME_DIR}.");
 
-        UnitManager = GameObject.Find(GameData.GAME_LOGIC).GetComponent<MBUnitManager>();
-        WorldManager = GameObject.Find(GameData.GAME_LOGIC).GetComponent<MBWorldManager>();
+        if ((UnitManager = GameObject.Find(GameData.GAME_LOGIC).GetComponent<MBUnitManager>()) == null)
+            Debug.Log($"Подключите к обьекту {GameData.GAME_LOGIC} скрипт {ManagerData.UnitManager}.");
+
+        if((WorldManager = GameObject.Find(GameData.GAME_LOGIC).GetComponent<MBWorldManager>()) == null)
+            Debug.Log($"Подключите к обьекту {GameData.GAME_LOGIC} скрипт {ManagerData.WorldManager}.");
 
         Run();
     }

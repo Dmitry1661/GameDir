@@ -12,15 +12,20 @@ public class MBCharacterController : MBUnitController
     {
         #region Перемещение персонажа по оси X
 
-        if (GameLogic.UnitManager.Character.CacheAction.ActionType.HasFlag(ActionType.Run))
+        if (GameLogic.UnitManager.Character.UnitDataBuffer.CacheAction.ActionType.HasFlag(ActionType.Run))
         {
-            GameLogic.UnitManager.Character.Position.NextPosition(
-                    new NextPositionX(GameLogic.UnitManager.Character.Position.Transform.position,
+            GameLogic.UnitManager.Character.Transform.NextPosition(
+                    new NextPositionX(GameLogic.UnitManager.Character.Transform.Position,
                                       Time.fixedDeltaTime,
-                                      GameLogic.UnitManager.Character.CacheCharacteristic.CurrentMoveSpeed).ResultPosition
+                                      GameLogic.UnitManager.Character.UnitDataBuffer.CacheCharacteristic.CurrentMoveSpeed).ResultPosition
                 );
         }
 
         #endregion
+
+    }
+
+    public void Update()
+    {
     }
 }
