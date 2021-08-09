@@ -5,16 +5,11 @@ public class MBAttackButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 {
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (GameLogic.UnitManager.Character.UnitDataBuffer.CacheAction.ActionType.HasFlag(ActionType.Run)) return;
-
-        GameLogic.UnitManager.Character.UnitDataBuffer
-            .Write(new ActionControll(), new string[] { ActionControllData.UPPER_THE_FLAG, "ATTACK" });
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        GameLogic.UnitManager.Character.UnitDataBuffer
-             .Write(new ActionControll(), new string[] { ActionControllData.LOWER_THE_FLAG, "ATTACK" });
+        throw new System.NotImplementedException();
     }
 
     public void Start()

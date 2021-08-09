@@ -1,6 +1,7 @@
 ﻿public class ResetJump : IWriteCache
 {
-    public void Write(ref CacheUnitAction pUnitAction, ref CacheUnitCountdown pUnitCoolDown, ref CacheUnitCharacteristic pCacheUnitCharacteristic, string[] pInformation)
+    public void Write(UnitDataBuffer pUnitDataBuffer, string[] pInformation)
     {
+        throw new System.NotImplementedException();
     }
 }

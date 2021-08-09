@@ -19,10 +19,9 @@
 
 public class ActionControll : IWriteCache
 {
-    public void Write(ref CacheUnitAction pUnitAction, ref CacheUnitCountdown pUnitCoolDown, 
-        ref CacheUnitCharacteristic pCacheUnitCharacteristic, string[] pInformation)
+    public void Write(UnitDataBuffer pUnitDataBuffer, string[] pInformation)
     {
-        ActionType actionType = pUnitAction.ActionType;
+        ActionType actionType = pUnitDataBuffer.Action.ActionType;
 
         switch(pInformation[0])
         {
@@ -45,7 +44,7 @@ public class ActionControll : IWriteCache
                 break;
         }
 
-        pUnitAction = new CacheUnitAction(actionType);
+        pUnitDataBuffer.Action = new CacheUnitAction(actionType);
     }
 }
 

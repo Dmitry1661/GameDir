@@ -1,5 +1,4 @@
 ﻿public interface IWriteCache
 {
-    void Write(ref CacheUnitAction pUnitAction, ref CacheUnitAttackPower pAttackPower, 
-        ref CacheUnitAttackReload pAttackCountdown, string[] pInformation);
+    void Write(UnitDataBuffer pUnitDataBuffer, string[] pInformation = null);
 }

@@ -5,9 +5,10 @@
 /// </summary>
 public class MoveSpeedInvolution : IWriteCache
 {
-    public void Write(ref CacheUnitAction pUnitAction, ref CacheUnitCountdown pUnitCoolDown, 
-        ref CacheUnitCharacteristic pCacheUnitCharacteristic, string [] pInformaion)
+    public void Write(UnitDataBuffer pUnitDataBuffer, string[] pInformation)
     {
-        pCacheUnitCharacteristic.CurrentMoveSpeed = pCacheUnitCharacteristic.CurrentMoveSpeed * -1;
+        pUnitDataBuffer.MoveSpeed = new CacheUnitMoveSpeed(pUnitDataBuffer.MoveSpeed.Standart,
+                                                            pUnitDataBuffer.MoveSpeed.Intermediate,
+                                                            pUnitDataBuffer.MoveSpeed.Current * -1);
     }
 }

@@ -4,8 +4,9 @@ public class MBVerticalMovement : MonoBehaviour
 {
     public void Jump()
     {
+        /*
         // Проверяем что бы количесво прыжков не привышало максимально разрешенное.
-        if (GameLogic.UnitManager.Character.UnitDataBuffer.CacheCharacteristic.CurrentNumberJump >= 
+        if (GameLogic.UnitManager.Character.UnitDataBuffer.c.CurrentNumberJump >= 
             GameLogic.UnitManager.Character.UnitDataBuffer.CacheCharacteristic.CountJump) return;
 
         // Выставим текущее дейсвие Jump.
@@ -15,6 +16,7 @@ public class MBVerticalMovement : MonoBehaviour
         GameLogic.UnitManager.Character.UnitDataBuffer.CacheCharacteristic.CurrentNumberJump++;
 
         GameLogic.UnitManager.Character.Transform.Rigidbody.AddForce(new Vector3(0f, 10f , 0f) , ForceMode2D.Impulse);
+        */
     }
 
     public void Start()
