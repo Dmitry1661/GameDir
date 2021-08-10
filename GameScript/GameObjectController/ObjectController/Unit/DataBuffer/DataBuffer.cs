@@ -3,33 +3,33 @@
 /************************************************************************************************************/
 /***********Храненит КЕШИ. КЕШИ открытые используются для быстрой записи или получения информации.***********/
 /************************************************************************************************************/
-public class UnitDataBuffer
+using System.Collections.Generic;
+
+public class DataBuffer
 {
-    public UnitDataBuffer(UnitSetting pUnitSetting)
+    public DataBuffer(UnitSetting pUnitSetting)
     {
         Action = new CacheUnitAction(ActionType.None);
 
-        AttackPower = new CacheUnitAttackPower(pUnitSetting);
-        AttackReload = new CacheUnitAttackReload(pUnitSetting);
-        MoveSpeed = new CacheUnitMoveSpeed(pUnitSetting);
-
-        CountJump = new CacheUnitCountJump(pUnitSetting);
-        PowerJump = new CacheUnitPowerJump(pUnitSetting);
+        AttackPower = new CacheProperty<float>(pUnitSetting.AttackPower);
+        AttackReload = new CacheProperty<float>(pUnitSetting.AttackReload);
+        MoveSpeed = new CacheProperty<float>(pUnitSetting.MoveSpeed);
+        CountJump = new CacheProperty<int>(pUnitSetting.CountJump);
+        JumpPower = new CacheProperty<float>(pUnitSetting.AttackPower);
     }
 
     public void Write(IWriteCache pCache, string[] pInformation = null)
-    {
+    { 
         pCache.Write(this, pInformation);
     }
 
     public CacheUnitAction Action;
 
-    public CacheUnitAttackPower AttackPower;
-    public CacheUnitAttackReload AttackReload;
-    public CacheUnitMoveSpeed MoveSpeed;
-
-    public CacheUnitCountJump CountJump;
-    public CacheUnitPowerJump PowerJump;
+    public CacheProperty<float> AttackPower;
+    public CacheProperty<float> AttackReload;
+    public CacheProperty<float> MoveSpeed;
+    public CacheProperty<int> CountJump;
+    public CacheProperty<float> JumpPower; 
 }
 
 

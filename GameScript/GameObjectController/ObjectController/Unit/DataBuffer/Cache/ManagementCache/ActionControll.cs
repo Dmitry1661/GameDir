@@ -19,7 +19,7 @@
 
 public class ActionControll : IWriteCache
 {
-    public void Write(UnitDataBuffer pUnitDataBuffer, string[] pInformation)
+    public void Write(DataBuffer pUnitDataBuffer, string[] pInformation)
     {
         ActionType actionType = pUnitDataBuffer.Action.ActionType;
 

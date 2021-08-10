@@ -1,4 +1,4 @@
 ﻿public interface IWriteCache
 {
-    void Write(UnitDataBuffer pUnitDataBuffer, string[] pInformation = null);
+    void Write(DataBuffer pUnitDataBuffer, string[] pInformation = null);
 }
