@@ -18,7 +18,10 @@ public class MBUnitController : MBGameObjectController, IUnitController
 
         // Настроим базовые характеристики Unit'a.
         if (SettingFileJson != null)
-            UnitDataBuffer = new DataBuffer(JsonUtility.FromJson<UnitSetting>(SettingFileJson.text));
+        {
+            UnitSetting setting = JsonUtility.FromJson<UnitSetting>(SettingFileJson.text);
+            Property = new PropertiesBuffer(setting);
+        }
         else
             Debug.Log($"Подключите файл SettingFileJSON к обьекту {gameObject.name}.");
 
@@ -28,6 +31,8 @@ public class MBUnitController : MBGameObjectController, IUnitController
     }
 
     public MBGameLogic GameLogic { private set; get; }
-    public DataBuffer UnitDataBuffer { private set; get; }
+
+    public ActionBuffer Action { private set; get; }
+    public PropertiesBuffer Property { private set; get; }
 }
 

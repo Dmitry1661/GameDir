@@ -17,9 +17,10 @@
 }
 
 
-public class ActionControll : IWriteCache
+public class ActionControll : IBufferDataProcessing<ActionType>
 {
-    public void Write(DataBuffer pUnitDataBuffer, string[] pInformation)
+    /*
+    public void Write(PropertyBuffer pUnitDataBuffer, string[] pInformation)
     {
         ActionType actionType = pUnitDataBuffer.Action.ActionType;
 
@@ -44,7 +45,12 @@ public class ActionControll : IWriteCache
                 break;
         }
 
-        pUnitDataBuffer.Action = new CacheUnitAction(actionType);
+        pUnitDataBuffer.Action = new UnitAction(actionType);
+    }
+    */
+    public void Process(ActionType Buffer, string[] pInformation)
+    {
+        throw new System.NotImplementedException();
     }
 }
 

@@ -6,13 +6,15 @@ public class MBUnitCollision : MBCollision
     {
         switch (collision.collider.name)
         {
+            /*
             case CollisionData.FLOOR:
 
                 //Если коснулись земли, то прыжок закончился.
-                GameLogic.UnitManager.Character.UnitDataBuffer
+                GameLogic.UnitManager.Character.Property
                     .Write(new ActionControll(), new string[] { ActionControllData.LOWER_THE_FLAG, "JUMP" });
 
                 break;
+            */
         }
     }
 }

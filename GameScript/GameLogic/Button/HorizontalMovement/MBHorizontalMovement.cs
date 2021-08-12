@@ -17,7 +17,7 @@ public class MBHorizontalMovement : MonoBehaviour
     private void Movement(WatchDirectionEnum pWatchDirection)
     {
         // Записываем в ActionCache что мы RUN
-        GameLogic.UnitManager.Character.UnitDataBuffer
+        GameLogic.UnitManager.Character.Property
             .Write(new ActionControll(), new string[] { ActionControllData.UPPER_THE_FLAG, "RUN" });
 
         // Запускаем анимацию.
@@ -31,7 +31,7 @@ public class MBHorizontalMovement : MonoBehaviour
             GameLogic.UnitManager.Character.Rotation.Rotation();
 
             // Перевернем скорость.
-            GameLogic.UnitManager.Character.UnitDataBuffer.Write(new MoveSpeedInvolution());
+            GameLogic.UnitManager.Character.Property.Write(new InvolutionMoveSpeed());
         }
         // Если смотрим в лево, но поварачиваемся в право.
         else if (GameLogic.UnitManager.Character.Direction.WatchDirection.HasFlag(WatchDirectionEnum.Left) &&
@@ -40,16 +40,19 @@ public class MBHorizontalMovement : MonoBehaviour
             GameLogic.UnitManager.Character.Rotation.Rotation();
 
             // Перевернем скорость.
-            GameLogic.UnitManager.Character.UnitDataBuffer.Write(new MoveSpeedInvolution());
+            GameLogic.UnitManager.Character.Property.Write(new InvolutionMoveSpeed());
         }
+        */
     }
 
     public void ToStop()
     {
-        GameLogic.UnitManager.Character.UnitDataBuffer
+        /*
+        GameLogic.UnitManager.Character.Property
             .Write(new ActionControll(), new string[] { ActionControllData.LOWER_THE_FLAG, "RUN" });
 
         GameLogic.UnitManager.Character.Animator.SetAnim(AnimationData.RUN, false);
+        */
     }
 
     public void Start()

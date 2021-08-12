@@ -17,9 +17,7 @@ public class MBFromJson<T> : MonoBehaviour
         List<T> missionList = new List<T>();
 
         for (int i = 0; i < MissionData.MISSION_COUNT; ++i)
-        {
             missionList.Add(Get($"{pPathToDirectory + (i + 1)}/{pNameFile}"));
-        }
 
         return missionList;
     }

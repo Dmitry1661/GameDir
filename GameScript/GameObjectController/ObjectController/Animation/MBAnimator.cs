@@ -1,7 +1,12 @@
 ﻿using UnityEngine;
 
-public class MBAnimator : MonoBehaviour, IAnimator
+public class MBAnimator : MonoBehaviour
 {
+    /// <summary>
+    /// Задает анимацию.
+    /// </summary>
+    /// <param name="pAnimData"></param>
+    /// <param name="pBool"></param>
     public void SetAnim(string pAnimData, bool pBool)
     {
         Animator.SetBool(pAnimData, pBool);

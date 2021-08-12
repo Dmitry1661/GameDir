@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// Oткрывает Текстовый файл.
@@ -14,9 +15,9 @@ public class MBTextFileOpen : MonoBehaviour
     {
         TextAsset bindata = Resources.Load(pPath) as TextAsset;
 
-
         //Player player1 = new Player();
-        //string json = JsonUtility.ToJson(new II());
+        //II i = new II();
+        //string json = JsonUtility.ToJson(i);
         //print(json);
 
         // Из джейсона.
@@ -32,6 +33,6 @@ public class MBTextFileOpen : MonoBehaviour
 
 class II
 {
-}
 
+}
 
