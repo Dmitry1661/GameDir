@@ -27,7 +27,7 @@ public class MBHorizontalMovement : MonoBehaviour
         if (GameLogic.UnitManager.Character.Direction.WatchDirection.HasFlag(WatchDirectionEnum.Right) &&
             pWatchDirection.HasFlag(WatchDirectionEnum.Left))
         {
-            // То развернем обьект.
+            // То развернем обьект
             GameLogic.UnitManager.Character.Rotation.Rotation();
 
             // Перевернем скорость.
