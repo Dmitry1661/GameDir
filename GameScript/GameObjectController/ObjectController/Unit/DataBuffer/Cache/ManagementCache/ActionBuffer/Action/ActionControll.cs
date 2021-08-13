@@ -16,13 +16,11 @@
     public const string UPPER_ONE_THE_FLAG = "UPPER_ONE_THE_FLAG";
 }
 
-
-public class ActionControll : IBufferDataProcessing<ActionType>
+public class ActionControll : IBufferDataProcessing<CacheAction>
 {
-    /*
-    public void Write(PropertyBuffer pUnitDataBuffer, string[] pInformation)
+    public void Process(ref CacheAction pCacheAction, string[] pInformation)
     {
-        ActionType actionType = pUnitDataBuffer.Action.ActionType;
+        ActionType actionType = pCacheAction.Current;
 
         switch(pInformation[0])
         {
@@ -45,12 +43,7 @@ public class ActionControll : IBufferDataProcessing<ActionType>
                 break;
         }
 
-        pUnitDataBuffer.Action = new UnitAction(actionType);
-    }
-    */
-    public void Process(ActionType Buffer, string[] pInformation)
-    {
-        throw new System.NotImplementedException();
+        pCacheAction = new CacheAction(actionType, pCacheAction);
     }
 }
 

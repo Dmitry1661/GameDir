@@ -1,5 +1,5 @@
 ﻿/************************************************************************************************************/
-/************************************************UnitDataBuffer**********************************************/
+/*********************************************~PropertiesBuffer~*********************************************/
 /************************************************************************************************************/
 /*******************Хранит данные свойсв обьекта в КЕШАХ и осуществляет работу с ними.***********************/
 /************************************************************************************************************/
@@ -12,7 +12,7 @@ public struct PropertyData
     public const string MOVE_SPEED = "MOVE_SPEED";
 }
 
-public class PropertiesBuffer : IIOBuffer<IBufferDataProcessing<PropertiesBuffer>, CacheProperty>
+public class PropertiesBuffer : IIOBuffer<IBufferDataProcessing<List<CacheProperty>>, CacheProperty>
 {
     public PropertiesBuffer(UnitSetting pUnitSetting)
     {
@@ -21,9 +21,9 @@ public class PropertiesBuffer : IIOBuffer<IBufferDataProcessing<PropertiesBuffer
         CacheList.Add(new CacheProperty(PropertyData.MOVE_SPEED, pUnitSetting.MoveSpeed));
     }
 
-    public void Input(IBufferDataProcessing<PropertiesBuffer> pUnitDataBuffer, string[] pInformation = null)
+    public void Input(IBufferDataProcessing<List<CacheProperty>> pUnitDataBuffer, string[] pInformation = null)
     {
-        pUnitDataBuffer.Process(this, pInformation);
+        pUnitDataBuffer.Process(ref CacheList, pInformation);
     }
 
     public CacheProperty Output(string pName)
@@ -31,6 +31,6 @@ public class PropertiesBuffer : IIOBuffer<IBufferDataProcessing<PropertiesBuffer
         return CacheList.Find(data => data.Name == pName);
     }
 
-    private readonly List<CacheProperty> CacheList = new List<CacheProperty>();
+    private List<CacheProperty> CacheList = new List<CacheProperty>();
 }
 

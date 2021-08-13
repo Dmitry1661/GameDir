@@ -1,26 +1,36 @@
-﻿using System;
+﻿/************************************************************************************************************/
+/*******************************************<_>ActionBuffer<_>***********************************************/
+/************************************************************************************************************/
+/*************Буфер который работает с КЕШЕМ отвечающим за "События" происходящие с Unit.********************/
+/************************************************************************************************************/
+using System;
 
 [Flags]
 public enum ActionType : short
 {
     None = 0,
-    Jump = 4,
-    Attack = 8,
-    Run = 16,
+    Jump = 4,   // Прыжок.
+    Attack = 8, // Стандартная атака.
+    Run = 16,   // Движение по горизонтали.
 }
 
-public class ActionBuffer : IIOBuffer<IBufferDataProcessing<ActionBuffer>, CacheAction>
+public class ActionBuffer : IIOBuffer<IBufferDataProcessing<CacheAction>, CacheAction>
 {
     public ActionBuffer()
     {
         Action = new CacheAction(ActionType.None);
     }
 
-    public void Input(IBufferDataProcessing<ActionBuffer> pUnitDataBuffer, string[] pInformation = null)
+    public void Input(IBufferDataProcessing<CacheAction> pUnitDataBuffer, string[] pInformation = null)
     {
-        pUnitDataBuffer.Process(this, pInformation);
+        pUnitDataBuffer.Process(ref Action, pInformation);
     }
 
+    /// <summary>
+    /// Возвращает кэш в котором хранится информация, о активности.
+    /// </summary>
+    /// <param name="pName">NULL</param>
+    /// <returns></returns>
     public CacheAction Output(string pName = null)
     {
         return Action;

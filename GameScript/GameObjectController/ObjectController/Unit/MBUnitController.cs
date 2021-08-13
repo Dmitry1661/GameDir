@@ -16,6 +16,8 @@ public class MBUnitController : MBGameObjectController, IUnitController
         // Добавим обьект в UnitManager.
         GameLogic.UnitManager.Add(gameObject);
 
+        Action = new ActionBuffer();
+
         // Настроим базовые характеристики Unit'a.
         if (SettingFileJson != null)
         {
@@ -28,10 +30,10 @@ public class MBUnitController : MBGameObjectController, IUnitController
         // Проверим подключeн ли скрипт отвечающий за колизию.
         if(gameObject.GetComponent<MBUnitCollision>() == null)
             Debug.Log($"Подключите скрипт отвичающий за колизию к обьету {gameObject.name}.");
+
     }
 
     public MBGameLogic GameLogic { private set; get; }
-
     public ActionBuffer Action { private set; get; }
     public PropertiesBuffer Property { private set; get; }
 }

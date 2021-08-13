@@ -22,7 +22,6 @@ public class MBCharacterController : MBUnitController
         }
 
         #endregion
-
     }
 
     public void Update()
