@@ -2,37 +2,29 @@
 /*******************************************[.]CacheProperty[.]**********************************************/
 /************************************************************************************************************/
 /******************Структура предназначеная для хранения численных данных(Свойсв Unit).**********************/
-/*************************************[1]. Name - Наименование свойсва.**************************************/
-/******************[2]. Standart - Стандартное значение. Данное свойсво не должно изменяться!****************/
-/****************[3]. Intermediate - Промежуточное значение. Используется для подчета Current.***************/
-/****[4]. Current - Текущее значение. Это итоговый результат игровой логики, который мы применяем к Unit.****/
+/******************[1]. Standart - Стандартное значение. Данное свойсво не должно изменяться!****************/
+/****************[2]. Intermediate - Промежуточное значение. Используется для подчета Current.***************/
+/****[3]. Current - Текущее значение. Это итоговый результат игровой логики, который мы применяем к Unit.****/
 /************************************************************************************************************/
-public struct CacheProperty 
-{
-    public CacheProperty(string pName, float pPropertySize)
+public struct CacheProperty
+{ 
+    public CacheProperty(float pPropertySize)
     {
-        Name = pName;
         Standart = Intermediate = Current = pPropertySize;
     }
     public CacheProperty(CacheProperty pCacheProperty)
     {
-        Name = pCacheProperty.Name;
         Standart = pCacheProperty.Standart;
         Intermediate = pCacheProperty.Intermediate;
         Current = pCacheProperty.Current;
     }
-    public CacheProperty(string pName, float pStandart, float pIntermediate, float pCurrent)
+    public CacheProperty(float pStandart, float pIntermediate, float pCurrent)
     {
-        Name = pName;
         Standart = pStandart;
         Intermediate = pIntermediate;
         Current = pCurrent;
     }
 
-    /// <summary>
-    /// Наиманование свойсва.
-    /// </summary>
-    public string Name { private set; get; }
     /// <summary>
     /// Стандартное значение свойсва(не изменяется)
     /// </summary>

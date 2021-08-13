@@ -18,27 +18,27 @@
 
 public class ActionControll : IBufferDataProcessing<CacheAction>
 {
-    public void Process(ref CacheAction pCacheAction, string[] pInformation)
+    public void Process(ref CacheAction pCacheAction, string[] pInformationArray)
     {
         ActionType actionType = pCacheAction.Current;
 
-        switch(pInformation[0])
+        switch(pInformationArray[0])
         {
             case ActionControllData.UPPER_THE_FLAG:
 
-                actionType |= new HaveActionType(pInformation[1]).Result;
+                actionType |= new HaveActionType(pInformationArray[1]).Result;
 
                 break;
 
             case ActionControllData.LOWER_THE_FLAG:
 
-                actionType ^= new HaveActionType(pInformation[1]).Result;
+                actionType ^= new HaveActionType(pInformationArray[1]).Result;
 
                 break;
 
             case ActionControllData.UPPER_ONE_THE_FLAG:
 
-                actionType = new HaveActionType(pInformation[1]).Result;
+                actionType = new HaveActionType(pInformationArray[1]).Result;
 
                 break;
         }

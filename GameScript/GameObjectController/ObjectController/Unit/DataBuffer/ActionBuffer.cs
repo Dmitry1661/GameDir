@@ -16,11 +16,6 @@ public enum ActionType : short
 
 public class ActionBuffer : IIOBuffer<IBufferDataProcessing<CacheAction>, CacheAction>
 {
-    public ActionBuffer()
-    {
-        Action = new CacheAction(ActionType.None);
-    }
-
     public void Input(IBufferDataProcessing<CacheAction> pUnitDataBuffer, string[] pInformation = null)
     {
         pUnitDataBuffer.Process(ref Action, pInformation);
@@ -36,5 +31,5 @@ public class ActionBuffer : IIOBuffer<IBufferDataProcessing<CacheAction>, CacheA
         return Action;
     }
 
-    private CacheAction Action;
+    private CacheAction Action = new CacheAction(ActionType.None);
 }

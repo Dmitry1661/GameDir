@@ -7,7 +7,7 @@ public interface IBufferDataProcessing<T>
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="pCache">КЕШ</param>
-    /// <param name="pInformation">Принимает дополнительную информацию.</param>
-    void Process(ref T pCache, string[] pInformation);
+    /// <param name="pCaches">КЕШ</param>
+    /// <param name="pInformationArray">Принимает дополнительную информацию.</param>
+    void Process(ref T pCaches, string[] pInformationArray);
 }

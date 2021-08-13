@@ -4,19 +4,16 @@
 /*********************Класс реализующий процесс отвечающий за изменение данных в кеши.***********************/
 /************************************************************************************************************/
 using System.Collections.Generic;
-public class InvolutionMoveSpeed : IBufferDataProcessing<List<CacheProperty>>
+public class InvolutionMoveSpeed : IBufferDataProcessing<Dictionary<string, CacheProperty>>
 {
     /// <summary>
     /// Переворачивает MOVE_SPEED.
     /// </summary>
-    /// <param name="pCacheList"></param>
-    /// <param name="pInformation"></param>
-    public void Process(ref List<CacheProperty> pCacheList, string[] pInformation)
+    /// <param name="pCaches"></param>
+    /// <param name="pInformationArray"></param>
+    public void Process(ref Dictionary<string, CacheProperty> pCaches, string[] pInformationArray)
     {
-        CacheProperty cache = pCacheList.Find(index => index.Name == PropertyData.MOVE_SPEED);
-
-        pCacheList.Remove(cache);
-
-        pCacheList.Add(new CacheProperty(PropertyData.MOVE_SPEED, cache.Standart, cache.Intermediate, cache.Current * -1));
+        CacheProperty cache = pCaches[PropertyData.MOVE_SPEED];
+        pCaches[PropertyData.MOVE_SPEED] = new CacheProperty(cache.Standart, cache.Intermediate, cache.Current * -1);
     }
 }

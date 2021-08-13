@@ -12,25 +12,25 @@ public struct PropertyData
     public const string MOVE_SPEED = "MOVE_SPEED";
 }
 
-public class PropertiesBuffer : IIOBuffer<IBufferDataProcessing<List<CacheProperty>>, CacheProperty>
+public class PropertiesBuffer : IIOBuffer<IBufferDataProcessing<Dictionary<string, CacheProperty>>, CacheProperty>
 {
     public PropertiesBuffer(UnitSetting pUnitSetting)
     {
-        CacheList.Add(new CacheProperty(PropertyData.ATTACK_POWER, pUnitSetting.AttackPower));
-        CacheList.Add(new CacheProperty(PropertyData.ATTACK_RELOAD, pUnitSetting.AttackReload));
-        CacheList.Add(new CacheProperty(PropertyData.MOVE_SPEED, pUnitSetting.MoveSpeed));
+        Dictionary.Add(PropertyData.ATTACK_POWER, new CacheProperty(pUnitSetting.AttackPower));
+        Dictionary.Add(PropertyData.ATTACK_RELOAD, new CacheProperty(pUnitSetting.AttackReload));
+        Dictionary.Add(PropertyData.MOVE_SPEED, new CacheProperty(pUnitSetting.MoveSpeed));
     }
 
-    public void Input(IBufferDataProcessing<List<CacheProperty>> pUnitDataBuffer, string[] pInformation = null)
+    public void Input(IBufferDataProcessing<Dictionary<string, CacheProperty>> pUnitDataBuffer, string[] pInformation = null)
     {
-        pUnitDataBuffer.Process(ref CacheList, pInformation);
+        pUnitDataBuffer.Process(ref Dictionary, pInformation);
     }
 
     public CacheProperty Output(string pName)
     {
-        return CacheList.Find(data => data.Name == pName);
+        return Dictionary[pName];
     }
 
-    private List<CacheProperty> CacheList = new List<CacheProperty>();
+    private Dictionary<string, CacheProperty> Dictionary = new Dictionary<string, CacheProperty>();
 }
 
